@@ -1,0 +1,59 @@
+lab 5 - 1
+
+def build_sentence( sentence ):
+    "input: string containing entire sentence, output: scrambled words in a sentence"
+
+    from scramble import scramble
+
+    split = sentence.split()
+
+    empty = ''
+
+    for word in split:
+        str(scramble(word))
+        #empty = empty + ' ' + word
+        #print(' '.join(empty))
+
+sentence = str(raw_input() or 'helloworld this is a test')
+build_sentence( sentence )
+
+_____________________________________________________________________________________________________________________________________________________
+lab 5 - 2
+
+def currency( money ):
+    "input currency, return value with $ to 2 decimal places"
+
+    print '$%.2f' % (money)
+
+    return;
+
+money = float(raw_input())
+
+currency(money)
+
+_____________________________________________________________________________________________________________________________________________________
+lab 5 - 3
+
+def focallength( R1, R2, d, n):
+    "input radii R1 R2, thickness d, and refractive index n to return focal length"
+
+    f = 1.0/((n - 1.0)*((1.0/R1)-(1.0/R2)+(((n-1.0)*d)/(n*R1*R2))))
+    print 'Effective focal length f of a double sided convex lens: %.2f' % (f)
+
+_____________________________________________________________________________________________________________________________________________________
+lab 5 - 4
+
+def scramble( word ):
+    "flip two letters in a word (not first or last letter)"
+    import random
+
+    length = len(word)
+    lengt = length - 1
+    wlist = list(word)
+
+
+    if length >=4:
+        randomnum1 = int(random.randrange(1,lengt,1))
+        randomnum2 = int(random.randrange(1, lengt,1))
+        wlist[randomnum1], wlist[randomnum2] = wlist[randomnum2], wlist[randomnum1]
+        print ''.join(wlist)

@@ -1,0 +1,8 @@
+
+Select an option:
+    [1] Add Student Grade
+    [2] Remove Student Grade
+    [3] Modify Student Grade
+    [4] Display All Student Grades
+    
+Enter Selection: 

@@ -1,0 +1,41 @@
+lab 6 - 1
+
+end = int(raw_input('input an end > ') or 20)
+
+a = 1
+b = 1
+fib_numbers = [a]
+
+for item in xrange(1,end+1):
+    fib_numbers.append(a)
+    a,b = b, a + b
+
+print fib_numbers
+
+_____________________________________________________________________________________________________________________________________________________
+lab 6 - 2
+
+def my_xrange(start, stop, step = 1):
+    while start < stop:
+        yield start
+        start += step
+
+if __name__ == "__main__":
+    for i in my_xrange(start, stop):
+        print "%i" % i
+
+_____________________________________________________________________________________________________________________________________________________
+lab 6 - 3
+
+A = [[10, 20, 30, 40, 50, 60],
+     [11, 21, 31, 41, 51, 61],
+     [12, 22, 32, 42, 52, 62],
+     [13, 23, 33, 43, 53, 63],
+     [14, 24, 34, 44, 54, 64],
+     [15, 25, 35, 45, 55, 65],
+     [16, 26, 36, 46, 56, 66]]
+
+#transpose = [[x[0]] for x, _ in enumerate(A[0])]
+
+for item in range(0,len(A)-1):
+    print [x[item] for x in A]

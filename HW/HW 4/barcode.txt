@@ -1,0 +1,27 @@
+ycarve@thanos:~/hw4$ python barcode.py
+Please enter a 5 digit zip code > 99999
+!!.!.. !.!.. !.!.. !.!.. !.!..  .!.!.! 
+ycarve@thanos:~/hw4$ python barcode.py
+Please enter a 5 digit zip code > 19104
+!...!! !.!.. ...!! !!... .!..!  .!.!.!
+ycarve@thanos:~/hw4$ python barcode.py
+Please enter a 5 digit zip code > 33139
+!..!!. ..!!. ...!! ..!!. !.!..  ...!!!
+ycarve@thanos:~/hw4$ python barcode.py
+Please enter a 5 digit zip code > 02201
+!..!!. ..!!. !!... ...!!  .!.!.!
+ycarve@thanos:~/hw4$ python barcode.py
+Please enter a 5 digit zip code > 49726
+!.!..! !.!.. !...! ..!!. .!!..  ..!!.!
+ycarve@thanos:~/hw4$ python barcode.py
+Please enter a 5 digit zip code > 70802
+!!...! !!... !..!. !!... ..!!.  ..!!.!
+ycarve@thanos:~/hw4$ python barcode.py
+Please enter a 5 digit zip code > 38103
+!..!!. !..!. ...!! !!... ..!!.  .!.!.!
+ycarve@thanos:~/hw4$ python barcode.py
+Please enter a 5 digit zip code > 98104
+!!.!.. !..!. ...!! !!... .!..!  !..!.!
+ycarve@thanos:~/hw4$ python barcode.py
+Please enter a 5 digit zip code > 49918
+!.!..! !.!.. !.!.. ...!! !..!.  !.!..!

@@ -1,0 +1,3 @@
+ycarve@thanos:~/hw2$ python ccverify.py 
+Enter an 8 digit credit card number >  43589795
+43589795 is a VALID credit card number

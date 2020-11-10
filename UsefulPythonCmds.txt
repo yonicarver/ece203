@@ -1,0 +1,220 @@
+YONI CARVER
+ECE 203 - PROGRAMMING FOR ENGINEERS
+SHACKLEFORD
+WINTER 2017
+
+PYTHON
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TMUX
+
+tmux							enter tmux
+ctrl-b d						quit tmux
+ctrl-b "						hsplit current window
+ctrl-b %						vsplit current window
+ctrl-b w						display list of open windows
+ctrl-b t						display time
+ctrl-b f						find window
+ctrl-b x						kill pane
+ctrl-b c						create new window
+ctrl-b ,						rename window
+ctrl-b (l arrow)					go to left screen
+ctrl-b (r arrow)					go to right screen
+ctrl-b .						move window (to specified number window)
+ctrl-b :						tmux command line
+ctrl-b !						move current pane to new window
+ctrl-b ?						display list of commands for tmux
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+NAVIGATING FILE STRUCTURE
+
+mkdir							make a directory (folder)
+cd							change directory
+cd ..							go up a directory
+cd ../other_folder					change directory from 'current_folder' to 'other_folder' in one command
+cd ~							change working directory to home (/home/ycarve)
+pwd							display present working directory
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+LIST FILES/FOLDERS
+
+ls							list files/folders in current directory
+ls -l							list files/folders in current directory (long list)
+ls -la							list files/folders in current directory (long & hidden list)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CREATE FILE
+
+nano part1.py						create file 'part1.py' and open the nano editor
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+MOVING FILES
+
+mv current_file.py destination.py			move file 'current_file.py' to 'destination.py' (in same folder)
+mv folder1/current_file.py folder2/			move file 'current_file.py' from folder1 to 'folder2' (with same name 'curernt_file.py')
+mv current_file.py ../folder1/				move file 'current_file.py' up a level and into 'folder1' (with same name 'current_file.py')
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DELETING/REMOVING FILES/FOLDERS
+
+rmdir folder1						delete empty directory 'folder1'
+rm -r folder1						delete every file in 'folder1' and 'folder1'
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+EXPORTING FILES (PY --> TXT)
+
+python file1.py > text1.txt				export the output of 'file1.py' to 'text1.txt'
+less text1.txt						print the contents of 'text1.txt' to the screen (use 'j' & 'k' keys to scroll, 'q' to quit)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+USER INPUT
+
+x = float(raw_input())					user input
+x = int(raw_input('Enter number: '))			user input with prompt 'Enter number: '
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+LIST (mutable - state CAN be changed after creation)
+
+>> A = [3.24, 78, 'foo', 1103]				create list A (elements may include: floats, ints, strings)
+>> A[1:3]						print elements of list A 1 thru 3 in list A
+[78, 'foo']						output
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TUPLE (immutable - state can NOT be changed after creation)
+
+>> A = (32, 'bar', 32.22)				create tuple A (values cannot be changed after creation - similar to list)
+>> A[0:2]						print elements of tuple A 0 thru 2
+(32, 'bar')						output
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DICTIONARY (mutable - state CAN be changed after creation)
+
+>> A = {'name': 'Yoni, 'gender': 'male'}		create dictionary A (an associative array)
+>> A['gender']						print gender value
+'male'							output
+>> A.items()						generate list from dictionary
+[('name','Yoni'),('gender','male')]			output
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+STRING (immutable - state can NOT be changed after creation)
+
+>> A = "Hello World!"					create string of characters A "Hello World!"
+>> A[3:9]						print characters
+'lo Wor'						output
+>> A[0]							first character in string
+'H'							output
+>> A[-1]						last character in string
+'!'							output
+>> A[:5]
+'Hello'
+>> A[6:]
+'World!'
+>> A[:]
+'Hello World!'
+>> 'Wor' in A
+True
+>> 'Wr' in A
+False
+>> A.upper()
+'HELLO WORLD!'
+>> 'this is a test'.title()
+'This Is A Test'
+>> "data1, label, data 2, label".split(",")
+['data1', ' label', ' data 2', ' label']
+>> '-'.join('this is a test')
+'t-h-i-s- -i-s- -a- -t-e-s-t'
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+FUNCTIONS
+								 _
+def functionname( parameters ):					| def followed by the function name in parenthesis
+	"function_docstring"					| any input parameters or argumants in " "
+	function_suite						| code block starts with a : and is indented
+	return [expression]					|_ return exits a function (return; == return None)
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+MATHEMATICAL EXPRESSIONS
+
+sum(a, b)						add a and b
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+LIST COMPREHENSION
+
+[expression for name in list if filter]		expression in new list are each formed by the expression, which can use name
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+BASIC FILE I/O
+
+f = open('myfile.txt','r')			open file called 'myfile.txt' in read mode ('r')
+f.close()					close file 'myfile.txt' (under variable f)
+f.readlines()					read lines of file 'myfile.txt' (under variable f)
+
+	VALID FILE MODES
+	r					Open text file for reading. The stream is positioned at the beginning of the file. [Default]
+	r+					Open for reading and writing. The stream is positioned at the beginning of the file.
+	w					Truncate file to zero length or create text file for writing. The stream is positioned at the beginning of the file.
+	w+					Open for reading and writing. The file is created if it does not exist, otherwise it is truncated. The stream is positioned at the beginning of the file.
+	a					Open for writing. The file is created if it does not exist. The stream is positioned at the end of the file. Subsequent writes to the file will always end up at the then current end of file, irrespective of any intervening seek() or similar.
+	a+					Open for reading and writing. The file is created if it does not exist. The stream is positioned at the end of the file. Subse- quent writes to the file will always end up at the then current end of file, irrespective of any intervening seek() or similar.
+
+			   FILE MODE
+		     r  r+  w  w+  a  a+
+F		   --------------------------
+E read		   | X  X      X      X
+A write		   |    X   X  X   X  X
+T create	   |        X  X   X  X
+U truncate	   |        X  X
+R position @ start | X  X   X  X
+E position @ end   |               X   X
+S
+
+
+>> f = open('myfile.txt')
+>> try:							maybe do other stuff in here that could
+..	f.writelines('test\n')					cause the program to throw an exception
+>> finally:						this will happen if the code inside of the try block fails,
+..	f.close()						so our file will safely close no matter what
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CLASS
+
+class Person:								class name = 'Person'
+	""" doctring """						docstring (description of class)
+	def __init__(self,age,weight):					called when an object is created (instantiated), self is the instance
+		self.age = age						instance attribute age, initialized with age from __init__(self,AGE, weight)
+		self.weight = weight					inistance attribute weight, initialized with weight from __init__(self,age, WEIGHT)
+
+	def gain_weight(self,amount):					methods
+		""" Add 'amount' weight to a Person object """		|
+		self.weight += amount					|
+									|
+	def lose_weight(self,amount):					|
+		""" Remove 'amount' weight from a Person object """	|
+		self.weight -= amount					|
+									|
+	def have_birthday(self):					|
+		""" Increase the age of a Person object by 1 """	|
+		self.age += 1						|_
+
+joe = Person(12,88)							some instance 'joe', 12 & 88 reference age & weight in __init__
+bob = Person(30,155)
+
+print joe.age								accessing attribute age from joe
+print bob.weight							accessing attribute weight from bob
+
+joe.have_birthday()							calling method 'have_birthday()' [can also use Person.have_birthday(joe), uncommon]
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+FROM MIDTERM
+
+Expression		Result		Type
+---------------------------------------------
+3.5/2			1.75		Float
+range(99,100)		[99]		List
+"9" + "1"		"91"		Str
+6 + 4 / 3		7		Int
+float(1) + 2 * 3	7.0		Float
+4.0**(3/2)		4.0		Float
+
+
+
